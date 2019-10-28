@@ -1,29 +1,12 @@
-# vue-stative-example
+# Vue stative example application
+
+[vue-stative](https://github.com/stativejs/vue-stative) example application.
+
+Thanks to [Coinpaprika api](https://api.coinpaprika.com) that provided us the information about the coins.
 
 ## Project setup
+
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,28 +1,55 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <a-spin :spinning="loading">
+    <a-layout id="components-layout-demo-top" class="layout">
+      <a-layout-header>
+        <h1>Coins</h1>
+      </a-layout-header>
+      <a-layout-content style="padding: 0 50px">
+        <div
+          :style="{
+            padding: '24px',
+            minHeight: '280px',
+            marginTop: '16px'
+          }"
+        >
+          <SelectedCoin v-if="selectedCoin"></SelectedCoin>
+          <CoinsList
+            :style="{
+              marginTop: '16px'
+            }"
+          ></CoinsList>
+        </div>
+      </a-layout-content>
+      <a-layout-footer style="text-align: center">
+        Vue Stative Example App ©2019 Created by Alan Castro
+      </a-layout-footer>
+    </a-layout>
+  </a-spin>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CoinsList from './components/CoinsList.vue';
+import SelectedCoin from './components/SelectedCoin.vue';
 
 export default {
-  name: 'app',
+  subscribeTo: ['selectedCoin', 'loading'],
+  name: 'App',
   components: {
-    HelloWorld
+    CoinsList,
+    SelectedCoin
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+h1 {
+  color: white;
+}
+
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  float: left;
 }
 </style>
